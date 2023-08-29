@@ -36,7 +36,8 @@ jobs:
         #
         # In the filters below, the key should be the same as the directory name of the Stack
         filters: |
-          unity_datascience: unity_datascience
+          unity_datascience: 
+            - 'unity_datascience/**'
 
   build:
 
