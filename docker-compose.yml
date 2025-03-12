@@ -1,6 +1,12 @@
 # ${DOCKER_GROUP} and ${DOCKER_TAG} default values defined in the .env file 
 version: '3'
 services:
+    vtls_dev:
+        image: ${DOCKER_GROUP}/vtls_dev:${DOCKER_TAG}
+        hostname: local
+        build:
+            context: ./
+            dockerfile: $PWD/vtls_dev/Dockerfile
     sounder_sips_dev:
         image: ${DOCKER_GROUP}/sounder_sips_dev:${DOCKER_TAG}
         hostname: local
