@@ -19,10 +19,10 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
     rm -rf awscliv2.zip aws
 
 RUN mamba install -y python>3.11 nb_conda_kernels ipykernel \
-        s3fs boto3 netcdf4 xarray basemap cartopy h5netcdf pysqlite3 \
+        s3fs boto3 netcdf4 xarray basemap cartopy h5netcdf 'basemap>=1.4.0' pysqlite3 \
         ipython numpy pandas matplotlib scipy && \
-    mamba clean -y --all 
-RUN pip install unity_sds_client==0.7.0 data-podaac-subscriber PyWavelets 
+    conda clean -y --all 
+RUN pip install unity_sds_client==0.7.0 podaac-data-subscriber PyWavelets
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER ${NB_UID}
