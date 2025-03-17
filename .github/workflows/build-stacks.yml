@@ -46,6 +46,11 @@ jobs:
             - 'common/**'
             - '.github/workflows/**'
             - '.env'
+          vtls_dev:
+            - 'vtls_dev/**'
+            - 'common/**'
+            - '.github/workflows/**'
+            - '.env'
   build:
 
     runs-on: ubuntu-latest
